@@ -37,7 +37,6 @@
 		4D52316E2CF6582400505551 = {
 			isa = PBXGroup;
 			children = (
-				4D52318A2CF6587100505551 /* HomeScreen.swift */,
 				4D5231792CF6582400505551 /* Slice */,
 				4D5231782CF6582400505551 /* Products */,
 			);
@@ -54,6 +53,7 @@
 		4D5231792CF6582400505551 /* Slice */ = {
 			isa = PBXGroup;
 			children = (
+				4D52318A2CF6587100505551 /* HomeScreen.swift */,
 				4D52317A2CF6582400505551 /* SliceApp.swift */,
 				4D52317C2CF6582400505551 /* ContentView.swift */,
 				4D52317E2CF6582700505551 /* Assets.xcassets */,
