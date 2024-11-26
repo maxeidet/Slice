@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct SliceApp: App {
+    @StateObject private var roundData = RoundData()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeScreen()
+                .environmentObject(roundData)
         }
     }
 }
