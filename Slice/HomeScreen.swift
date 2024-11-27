@@ -18,40 +18,39 @@ struct HomeScreen: View {
     var body: some View {
         NavigationStack {
             
-      
-        VStack {
-            Text("Welcome")
-                .font(.title)
-                .fontWeight(.semibold)
-                .foregroundStyle(.white)
-            HStack(alignment:.top) {
-                VStack(alignment: .leading) {
-                    Text(user.name)
-                        .fontWeight(.semibold)
-                        .font(.title2)
-                        .foregroundStyle(.white)
-                    Text("HCP: \(user.hcp)")
-                        .foregroundStyle(.white)
-                        .font(.subheadline)
-                    Text("Rounds played: 40")
-                        .foregroundStyle(.white)
+            VStack {
+                Text("Welcome")
+                    .font(.title)
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.white)
+                HStack(alignment:.top) {
+                    VStack(alignment: .leading) {
+                        Text(user.name)
+                            .fontWeight(.semibold)
+                            .font(.title2)
+                            .foregroundStyle(.white)
+                        Text("HCP: \(user.hcp)")
+                            .foregroundStyle(.white)
+                            .font(.subheadline)
+                        Text("Rounds played: 40")
+                            .foregroundStyle(.white)
+                            .font(.subheadline)
+                    }
+                    Spacer()
+                    
+                    Text("Edit profile")
+                        .foregroundStyle(Color(.white))
                         .font(.subheadline)
                 }
-                Spacer()
-                
-                Text("Edit profile")
-                    .foregroundStyle(Color(.white))
-                    .font(.subheadline)
+                .padding(20)
             }
-            .padding(20)
-        }
- 
-        .frame(width: 420, height: 150)
-        .background(
-            Image("homeImage")
-                .resizable()
-                .edgesIgnoringSafeArea(.all)
-        )
+            
+            .frame(width: 420, height: 150)
+            .background(
+                Image("homeImage")
+                    .resizable()
+                    .edgesIgnoringSafeArea(.all)
+            )
             
             VStack(alignment: .leading) {
                 HStack {
@@ -60,19 +59,24 @@ struct HomeScreen: View {
                         .fontWeight(.semibold)
                     Spacer()
                     
-                    Text("All")
-                        .font(.subheadline)
-                        .underline()
-                        .foregroundStyle(Color(.black))
+                    NavigationLink( destination: AllRounds()){
+                        Text("All")
+                            .font(.subheadline)
+                            .underline()
+                            .foregroundStyle(Color(.black))
+                    }
+                        
+                    
+                        
                 }
             }
             .padding(.horizontal)
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                ForEach(roundData.rounds.sorted(by: { $0.date > $1.date }).indices, id: \.self) { index in
-                    let round = roundData.rounds.sorted(by: { $0.date > $1.date })[index]
-                    
+                    ForEach(roundData.rounds.sorted(by: { $0.date > $1.date }).indices, id: \.self) { index in
+                        let round = roundData.rounds.sorted(by: { $0.date > $1.date })[index]
+                        
                         RecentCard(date: formattedDate(round.date), score: round.score, club: round.course, image: round.image)
                     }
                     
@@ -81,7 +85,6 @@ struct HomeScreen: View {
             }
             
             
-            //Contries
             // Countries
             VStack {
                 HStack {
@@ -94,14 +97,13 @@ struct HomeScreen: View {
                         HStack {
                             Image("sverige")
                                 .resizable()
-                                .scaledToFit()
                                 .clipShape(Circle())
-                                .frame(width: 40, height: 40)
+                                .frame(width: 30, height: 30)
                             Image("norge")
                                 .resizable()
-                                .scaledToFit()
+                               
                                 .clipShape(Circle())
-                                .frame(width: 40, height: 40)
+                                .frame(width: 30, height: 30)
                             
                         }
                         
@@ -116,12 +118,20 @@ struct HomeScreen: View {
             }
             .frame(height: 150)
             //.background(Color(.white))
-            .background(Color(.gray))
+            .background(Color(.beige))
             .cornerRadius(20)
             .padding()
             
             //Stats Graph
-            VStack{
+            HStack {
+                Text("Statistics")
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
+                Spacer()
+            }
+            .padding(.horizontal)
+            
+            VStack {
                 Chart(roundData.rounds) { round in
                     LineMark(
                         x: .value("Date", round.date),
@@ -166,7 +176,20 @@ struct HomeScreen: View {
                 .padding(.horizontal, 25)
             }
             
+            Button(action: {
+                
+            }, label: {
+                Text("Golf")
+                    .foregroundStyle(Color(.white))
+            })
+            .frame(width: 100, height: 50)
+            .background(Color(.greenApp))
+            .cornerRadius(10)
+            .padding(.top, 90)
+            
             Spacer()
+           
+          
             
         }
     }

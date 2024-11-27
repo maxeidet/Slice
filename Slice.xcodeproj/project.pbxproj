@@ -15,6 +15,7 @@
 		4D52319D2CF66AC100505551 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D52319C2CF66AC100505551 /* DataModel.swift */; };
 		4D52319F2CF66EB200505551 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D52319E2CF66EB200505551 /* UserData.swift */; };
 		4D5231A12CF741F500505551 /* RecentCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5231A02CF741F500505551 /* RecentCard.swift */; };
+		4D5231A42CF7545100505551 /* AllRounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5231A32CF7545100505551 /* AllRounds.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		4D52319C2CF66AC100505551 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		4D52319E2CF66EB200505551 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		4D5231A02CF741F500505551 /* RecentCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentCard.swift; sourceTree = "<group>"; };
+		4D5231A32CF7545100505551 /* AllRounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRounds.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				4D5231A22CF741FE00505551 /* Components */,
 				4D52318A2CF6587100505551 /* HomeScreen.swift */,
 				4D5231A02CF741F500505551 /* RecentCard.swift */,
+				4D5231A32CF7545100505551 /* AllRounds.swift */,
 				4D52317A2CF6582400505551 /* SliceApp.swift */,
 				4D52317C2CF6582400505551 /* ContentView.swift */,
 				4D52317E2CF6582700505551 /* Assets.xcassets */,
@@ -160,6 +163,7 @@
 				4D52317D2CF6582400505551 /* ContentView.swift in Sources */,
 				4D52319D2CF66AC100505551 /* DataModel.swift in Sources */,
 				4D5231A12CF741F500505551 /* RecentCard.swift in Sources */,
+				4D5231A42CF7545100505551 /* AllRounds.swift in Sources */,
 				4D52317B2CF6582400505551 /* SliceApp.swift in Sources */,
 				4D52319F2CF66EB200505551 /* UserData.swift in Sources */,
 				4D52318B2CF6587100505551 /* HomeScreen.swift in Sources */,
