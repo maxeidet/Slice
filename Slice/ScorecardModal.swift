@@ -46,12 +46,16 @@ struct ScorecardModal: View {
                 createHeaderRow(label: "Par", values: course.holes.map { "\($0.par)" }, backgroundColor: .gray, foregroundColor: .black)
                 createScoreRow(label: "Strokes", values: course.holes.map { _ in "-" }, backgroundColor: .white, foregroundColor: .black)
                 createScoreRow(label: "Points", values: course.holes.map { _ in "-" }, backgroundColor: .gray, foregroundColor: .black)
+                
+                HStack {
+                    Text("Strokes: 0")
+                    Text("Points: 0")
+                }
+                .fontWeight(.bold)
             }
             VStack {
+                Text("Enter your score")
                 HStack{
-                    Text("Score hole \(currentH):")
-                        .font(.caption)
-                    // Score Input
                     HStack {
                         TextField("Score", text: $scoreInput)
                             .padding()
@@ -64,7 +68,6 @@ struct ScorecardModal: View {
                             .shadow(color: .black, radius: 3)
                             .opacity(0.4)
                     )
-                    .padding()
                     
                     Button(action: {
                         
@@ -78,6 +81,7 @@ struct ScorecardModal: View {
                 }
                 
             }
+            .padding()
             
            
             Spacer()

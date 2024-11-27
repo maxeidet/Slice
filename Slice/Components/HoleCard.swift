@@ -23,7 +23,7 @@ struct HoleCard: View {
                             .font(.largeTitle)
                             .fontWeight(.bold)
                     }
-                    .frame(width: 70)
+                    .frame(width: 80)
                     Spacer()
                     Divider()
                         .background(.black)
@@ -34,9 +34,10 @@ struct HoleCard: View {
                         
                         Text("Index: \(index)")
                             .font(.subheadline)
-                        Text("Distance 327m")
+                        Text("Distance: 327m")
                             .font(.subheadline)
                     }
+                    .frame(width: 150)
                     
                 }
                 .padding()

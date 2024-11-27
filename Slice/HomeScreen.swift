@@ -42,7 +42,7 @@ struct HomeScreen: View {
                         .foregroundStyle(Color(.white))
                         .font(.subheadline)
                 }
-                .padding(20)
+                .padding(.horizontal,20)
             }
             
             .frame(width: 420, height: 150)

@@ -22,11 +22,18 @@ struct AllRounds: View {
                 }, label: {
                     Image(systemName: "arrow.backward")
                         .foregroundStyle(Color(.black))
+                        .frame(width: 30, height: 30)
+                        .background(.lightGrayApp)
+                        .clipShape(Circle())
                 })
                 Spacer()
             }
             .padding(.horizontal)
-
+            
+            VStack {
+                Text("Max's rounds")
+                    .font(.title)
+            }
             // Search bar
             HStack {
                 TextField("Search for a course", text: $searchQuery)
@@ -168,11 +175,11 @@ struct AllRounds_Previews: PreviewProvider {
     static var previews: some View {
         let roundData = RoundData()
         roundData.rounds = [
-            DataModel(date: createDate(year: 2024, month: 9, day: 10), score: 19, course: "Linköpings GK", strokes: 90, image: "lkgk",
+            DataModel(date: createDate(year: 2024, month: 9, day: 10), score: 19, course: "Linköpings GK", strokes: 90, image: "lgk",
                       scores: [1: "4", 2: "5", 3: "3"]),
-            DataModel(date: createDate(year: 2024, month: 10, day: 5), score: 14, course: "Leksands GK", strokes: 85, image: "leksandgk",
+            DataModel(date: createDate(year: 2024, month: 10, day: 5), score: 14, course: "Leksands GK", strokes: 85, image: "lgk",
                       scores: [1: "4", 2: "5", 3: "3"]),
-            DataModel(date: Date(), score: 17, course: "Lidingö Gk", strokes: 88, image: "lgk",
+            DataModel(date: Date(), score: 17, course: "Lidingö Gk", strokes: 88, image: "ligk",
                       scores: [1: "4", 2: "5", 3: "3"])
         ]
 

@@ -42,7 +42,7 @@ struct GolfingScreen: View {
                         .font(.subheadline)
                 }
             }
-            .padding(.horizontal)
+            .padding()
             
             
             

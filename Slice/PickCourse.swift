@@ -4,7 +4,8 @@ struct PickCourse: View {
     @Environment(\.dismiss) var dismiss
     @State private var searchQuery: String = ""
     @State private var courseDistances: [String: Double] = [:]
-    @State private var courses: [Course] = [linkopingGK, leksandsGK] // Example courses
+    //@State private var courses: [Course] = [linkopingGK, leksandsGK, rattviksGK] // Example courses
+    @State private var courses: [Course] = CourseRepository.allCourses
     @ObservedObject var locationManager = LocationManager() // Inject your LocationManager
 
     var filteredCourses: [String] {
