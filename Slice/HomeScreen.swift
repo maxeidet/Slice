@@ -176,12 +176,10 @@ struct HomeScreen: View {
                 .padding(.horizontal, 25)
             }
             
-            Button(action: {
-                
-            }, label: {
+            NavigationLink( destination: PickCourse()){
                 Text("Golf")
                     .foregroundStyle(Color(.white))
-            })
+            }
             .frame(width: 100, height: 50)
             .background(Color(.greenApp))
             .cornerRadius(10)
