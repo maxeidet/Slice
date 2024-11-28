@@ -76,8 +76,11 @@ struct HomeScreen: View {
                 HStack {
                     ForEach(roundData.rounds.sorted(by: { $0.date > $1.date }).indices, id: \.self) { index in
                         let round = roundData.rounds.sorted(by: { $0.date > $1.date })[index]
-                        
-                        RecentCard(date: formattedDate(round.date), score: round.score, club: round.course, image: round.image)
+                        NavigationLink(destination: GameDetailView(round: round)) {
+                            RecentCard(date: formattedDate(round.date), score: round.score, club: round.course, image: round.image)
+                        }
+                        .foregroundColor(.black)
+                      
                     }
                     
                 }

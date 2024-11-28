@@ -10,6 +10,7 @@ import CoreLocation
 
 struct GolfingScreen: View {
     @State private var currentHole = 0
+    @State private var scores: [Int: String] = [:]
     @Environment(\.dismiss) var dismiss
     var course: Course
     @State private var isShowingScorecard = false
@@ -69,7 +70,7 @@ struct GolfingScreen: View {
             Spacer()
         }
         .sheet(isPresented: $isShowingScorecard) {
-            ScorecardModal(currentH: currentHole, course: course)
+            ScorecardModal(scores: $scores, currentH: currentHole, course: course)
         }
         .navigationBarBackButtonHidden(true)
 

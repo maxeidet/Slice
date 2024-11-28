@@ -18,46 +18,49 @@ struct PickCourse: View {
     var body: some View {
         NavigationStack {
             VStack {
-                // Back Button
-                HStack {
-                    Button(action: {
-                        dismiss()
-                    }, label: {
-                        Image(systemName: "arrow.left")
-                            .foregroundStyle(Color(.black))
-                    })
-                    Spacer()
-                }
-                .padding(.horizontal)
-                
-                // Header
                 VStack {
-                    Text("Pick your course")
-                        .font(.title2)
-                        .bold()
-                }
-                .padding()
-                
-                // Search Bar
-                HStack {
-                    TextField("Search for a course", text: $searchQuery)
-                        .padding()
-                    if !searchQuery.isEmpty {
-                        Image(systemName: "xmark")
-                            .padding()
-                            .onTapGesture {
-                                searchQuery = ""
-                            }
+                    // Back Button
+                    HStack {
+                        Button(action: {
+                            dismiss()
+                        }, label: {
+                            Image(systemName: "arrow.left")
+                                .foregroundStyle(Color(.black))
+                        })
+                        Spacer()
                     }
+                    .padding(.horizontal)
+                    
+                    // Header
+                    VStack {
+                        Text("Pick your course")
+                            .font(.title2)
+                            .bold()
+                    }
+                    .padding()
+                    
+                    // Search Bar
+                    HStack {
+                        TextField("Search for a course", text: $searchQuery)
+                            .padding()
+                        if !searchQuery.isEmpty {
+                            Image(systemName: "xmark")
+                                .padding()
+                                .onTapGesture {
+                                    searchQuery = ""
+                                }
+                        }
+                    }
+                    .frame(width: 250, height: 40)
+                    .background(
+                        Rectangle()
+                            .fill(Color.white)
+                            .cornerRadius(10)
+                            .shadow(color: .gray, radius: 3)
+                            .opacity(0.4)
+                    )
+                    
                 }
-                .frame(width: 250, height: 40)
-                .background(
-                    Rectangle()
-                        .fill(Color.white)
-                        .cornerRadius(10)
-                        .shadow(color: .gray, radius: 3)
-                        .opacity(0.4)
-                )
                 
                 // Courses List
                 VStack() {
@@ -84,9 +87,12 @@ struct PickCourse: View {
                                 Divider()
                             }
                         }
+                      
                     }
                 }
                 .padding()
+               
+            
                 
                 Spacer()
             }
