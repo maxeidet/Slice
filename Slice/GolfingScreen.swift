@@ -11,9 +11,11 @@ import CoreLocation
 struct GolfingScreen: View {
     @State private var currentHole = 0
     @State private var scores: [Int: String] = [:]
+    @State private var strokes = 0
     @Environment(\.dismiss) var dismiss
     var course: Course
     @State private var isShowingScorecard = false
+    @EnvironmentObject var roundData: RoundData
     
     var body: some View {
         NavigationStack {
@@ -55,6 +57,17 @@ struct GolfingScreen: View {
                 greenLocation: course.holeLocations[course.holes[currentHole].number] ?? CLLocationCoordinate2D(latitude: 0, longitude: 0)
             )
             
+            // Testing save function
+            Text("Testing strokes:\(totalStrokes())")
+            if currentHole == 8 {
+                Button(action: {
+                    finishRound()
+                }, label: {
+                    Text("Finnish")
+                    
+                })
+            }
+            
             // Open Scorecard Modal Button
             Button(action: {
                 isShowingScorecard.toggle()
@@ -76,6 +89,21 @@ struct GolfingScreen: View {
 
         
     }
+    
+    private func totalStrokes() -> Int {
+        return scores.values.compactMap { Int($0) }.reduce(0, +)
+    }
+    private func finishRound() {
+            let newRound = DataModel(
+                date: Date(),
+                score: 36,
+                course: course.name,
+                strokes: totalStrokes(),
+                image: course.image,
+                scores: scores
+            )
+            roundData.addRound(newRound)
+        }
     
 }
 

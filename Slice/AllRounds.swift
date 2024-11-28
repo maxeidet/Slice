@@ -138,8 +138,6 @@ struct AllRounds: View {
                 }
                 
             }
-
-            Spacer()
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)

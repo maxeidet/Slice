@@ -18,6 +18,7 @@ struct ScorecardModal: View {
         VStack(spacing: 16) {
             header
             scorecard
+            Divider()
             scoreInputSection
             Spacer()
         }
@@ -86,8 +87,8 @@ struct ScorecardModal: View {
                 
                 Button(action: {
                     if let score = Int(scoreInput) {
-                        scores[currentH] = "\(score)"
-                        scoreInput = "" // Clear input field after submission
+                        scores[currentH + 1] = "\(score)"
+                        scoreInput = ""
                     }
                 }) {
                     Text("Ok")
@@ -138,7 +139,7 @@ struct ScorecardModal: View {
                 .frame(height: 20)
                 .background(foregroundColor)
             ForEach(values.indices, id: \.self) { index in
-                Text(scores[index] ?? "-")
+                Text(scores[index + 1] ?? "-")
                     .frame(width: 30)
                     .font(.subheadline)
                     .fontWeight(.medium)
