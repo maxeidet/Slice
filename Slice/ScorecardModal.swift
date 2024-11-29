@@ -30,20 +30,22 @@ struct ScorecardModal: View {
     
     private var header: some View {
         HStack {
-            Spacer()
             Text("Scorecard")
                 .font(.largeTitle)
                 .fontWeight(.bold)
+            
             Spacer()
+            
             Button(action: {
                 dismiss()
             }, label: {
                 Image(systemName: "xmark.circle")
-                    .font(.title)
+                    .font(.title3)
                     .foregroundColor(.black.opacity(0.7))
             })
         }
         .padding(.bottom, 8)
+        
     }
     
     private var scorecard: some View {
@@ -53,9 +55,16 @@ struct ScorecardModal: View {
                     RoundedCornerShape(corners: [.topLeft, .topRight], radius: 10)
                 )
             createHeaderRow(label: "Hcp", values: course.holes.map { "\($0.index)" }, backgroundColor: .white, foregroundColor: .black)
-            createHeaderRow(label: "Par", values: course.holes.map { "\($0.par)" }, backgroundColor: .gray, foregroundColor: .black)
+            createHeaderRow(label: "Par", values: course.holes.map { "\($0.par)" }, backgroundColor: .lightGrayApp, foregroundColor: .black)
             createScoreRow(label: "Strokes", values: course.holes.indices.map { scores[$0] ?? "-" }, backgroundColor: .white, foregroundColor: .black)
-            createScoreRow(label: "Points", values: course.holes.map { _ in "-" }, backgroundColor: .gray, foregroundColor: .black)
+            createScoreRow(label: "Points", values: course.holes.map { _ in "-" }, backgroundColor: .lightGrayApp, foregroundColor: .black)
+            
+            //last 18
+            createHeaderRow(label: "Hole", values: course.holes.map { "\($0.number)" }, backgroundColor: .greenApp, foregroundColor: .white)
+            createHeaderRow(label: "Hcp", values: course.holes.map { "\($0.index)" }, backgroundColor: .white, foregroundColor: .black)
+            createHeaderRow(label: "Par", values: course.holes.map { "\($0.par)" }, backgroundColor: .lightGrayApp, foregroundColor: .black)
+            createScoreRow(label: "Strokes", values: course.holes.indices.map { scores[$0] ?? "-" }, backgroundColor: .white, foregroundColor: .black)
+            createScoreRow(label: "Points", values: course.holes.map { _ in "-" }, backgroundColor: .lightGrayApp, foregroundColor: .black)
             
             HStack {
                 Text("Strokes:\(totalStrokes ())")
@@ -153,6 +162,7 @@ struct ScorecardModal: View {
         .foregroundColor(foregroundColor)
     }
     
+    
     struct RoundedCornerShape: Shape {
         var corners: UIRectCorner
         var radius: CGFloat
@@ -169,6 +179,33 @@ struct ScorecardModal: View {
     
     func totalStrokes () -> Int {
         return scores.values.compactMap { Int($0) }.reduce(0, +)
+    }
+    // Function to calculate points based on score and hole's par, adjusted for handicap
+    func calculateHandicapBasedPoints(score: Int, holePar: Int, holeIndex: Int, handicap: Int) -> Int {
+        // Calculate the total extra strokes this player gets
+        let extraStrokes = handicap / 18  // One extra stroke per 18 holes, evenly distributed
+        
+        // Determine if the player gets an extra stroke on this hole based on their handicap
+        let extraStroke = holeIndex <= handicap % 18 + extraStrokes ? 1 : 0
+        
+        // Apply extra stroke if applicable
+        let adjustedScore = score - extraStroke
+        
+        // Stableford Scoring System adjusted for handicap
+        switch adjustedScore - holePar {
+        case _ where adjustedScore < holePar - 2:
+            return 4 // Eagle (2 strokes under par)
+        case _ where adjustedScore == holePar - 1:
+            return 3 // Birdie (1 stroke under par)
+        case _ where adjustedScore == holePar:
+            return 2 // Par (no strokes over par)
+        case _ where adjustedScore == holePar + 1:
+            return 1 // Bogey (1 stroke over par)
+        case _ where adjustedScore == holePar + 2:
+            return 0 // Double Bogey (2 strokes over par)
+        default:
+            return 0 // Triple Bogey or worse
+        }
     }
 }
 

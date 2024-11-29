@@ -23,6 +23,7 @@
 		4D5231AE2CF780C700505551 /* GolfingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5231AD2CF780C700505551 /* GolfingScreen.swift */; };
 		4D5231B02CF7855000505551 /* ScorecardModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5231AF2CF7855000505551 /* ScorecardModal.swift */; };
 		4D5231B22CF798A100505551 /* HoleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5231B12CF798A100505551 /* HoleCard.swift */; };
+		4D5231B62CF8F1BE00505551 /* HcpCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5231B52CF8F1BE00505551 /* HcpCalculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		4D5231AD2CF780C700505551 /* GolfingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GolfingScreen.swift; sourceTree = "<group>"; };
 		4D5231AF2CF7855000505551 /* ScorecardModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorecardModal.swift; sourceTree = "<group>"; };
 		4D5231B12CF798A100505551 /* HoleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoleCard.swift; sourceTree = "<group>"; };
+		4D5231B52CF8F1BE00505551 /* HcpCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HcpCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				4D5231A52CF76AC400505551 /* GameDetailView.swift */,
 				4D52317A2CF6582400505551 /* SliceApp.swift */,
 				4D5231AF2CF7855000505551 /* ScorecardModal.swift */,
+				4D5231B52CF8F1BE00505551 /* HcpCalculator.swift */,
 				4D52317C2CF6582400505551 /* ContentView.swift */,
 				4D52317E2CF6582700505551 /* Assets.xcassets */,
 				4D5231802CF6582700505551 /* Preview Content */,
@@ -181,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D5231B62CF8F1BE00505551 /* HcpCalculator.swift in Sources */,
 				4D52317D2CF6582400505551 /* ContentView.swift in Sources */,
 				4D52319D2CF66AC100505551 /* DataModel.swift in Sources */,
 				4D5231A12CF741F500505551 /* RecentCard.swift in Sources */,

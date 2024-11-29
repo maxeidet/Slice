@@ -57,8 +57,7 @@ struct GolfingScreen: View {
                 greenLocation: course.holeLocations[course.holes[currentHole].number] ?? CLLocationCoordinate2D(latitude: 0, longitude: 0)
             )
             
-            // Testing save function
-            Text("Testing strokes:\(totalStrokes())")
+         
             if currentHole == 8 {
                 Button(action: {
                     finishRound()
@@ -79,6 +78,7 @@ struct GolfingScreen: View {
                     .cornerRadius(10)
             }
             .padding()
+            .shadow(color: .black.opacity(0.2), radius: 3)
             
             Spacer()
         }
