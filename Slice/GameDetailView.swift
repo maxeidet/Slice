@@ -69,8 +69,7 @@ struct GameDetailView: View {
                             Text("Strokes: \(score)")
                         }
                         .padding(.horizontal)
-                        
-                        .frame(height: 40)
+                        .frame(height: 20)
                         Divider()
                     }
                 }

@@ -187,6 +187,7 @@ struct HomeScreen: View {
             .background(Color(.greenApp))
             .cornerRadius(10)
             .padding(.top, 90)
+            .shadow(color: .black.opacity(0.2), radius: 3)
             
             Spacer()
            
