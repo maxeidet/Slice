@@ -67,7 +67,7 @@ struct ScorecardModal: View {
             createScoreRow(label: "Points", values: course.holes.map { _ in "-" }, backgroundColor: .lightGrayApp, foregroundColor: .black)
             
             HStack {
-                Text("Strokes:\(totalStrokes ())")
+                Text("Total: \(totalStrokes ())")
                 Spacer()
                 Text("Points: 0")
             }

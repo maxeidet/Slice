@@ -40,7 +40,7 @@ let linkopingGKHoleLocations: [Int: CLLocationCoordinate2D] = [
     ]
 
 let linkopingGKHoles = [
-    Holes(number: 1, par: 4, index: 10, imageName: "hole1"),
+    Holes(number: 1, par: 4, index: 10, imageName: "ehole1"),
     Holes(number: 2, par: 4, index: 6, imageName: "hole2"),
     Holes(number: 3, par: 3, index: 16, imageName: "hole3"),
     Holes(number: 4, par: 5, index: 8, imageName: "hole4"),
@@ -68,7 +68,7 @@ let leksandsHoleLocations: [Int: CLLocationCoordinate2D] = [
 ]
 
 let leksandsHoles = [
-    Holes(number: 1, par: 3, index: 18, imageName: "hole1"),
+    Holes(number: 1, par: 3, index: 18, imageName: "ehole1"),
     Holes(number: 2, par: 4, index: 6, imageName: "hole2"),
     Holes(number: 3, par: 3, index: 16, imageName: "hole3"),
     Holes(number: 4, par: 5, index: 8, imageName: "hole4"),
@@ -95,7 +95,7 @@ let rattviksHoleLocations: [Int: CLLocationCoordinate2D] = [
 ]
 
 let rattviksHoles = [
-    Holes(number: 1, par: 3, index: 18, imageName: "hole1"),
+    Holes(number: 1, par: 3, index: 18, imageName: "ehole1"),
     Holes(number: 2, par: 4, index: 6, imageName: "hole2"),
     Holes(number: 3, par: 3, index: 16, imageName: "hole3"),
     Holes(number: 4, par: 5, index: 8, imageName: "hole4"),

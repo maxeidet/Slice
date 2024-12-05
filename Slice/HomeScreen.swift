@@ -44,7 +44,6 @@ struct HomeScreen: View {
                 }
                 .padding(.horizontal,20)
             }
-            
             .frame(width: 420, height: 150)
             .background(
                 Image("homeImage")
@@ -84,6 +83,7 @@ struct HomeScreen: View {
                     }
                     
                 }
+                .padding(.horizontal)
                 .frame(height: 120)
             }
             
@@ -123,9 +123,10 @@ struct HomeScreen: View {
             //.background(Color(.white))
             .background(Color(.beige))
             .cornerRadius(20)
+            .shadow(color: .black.opacity(0.2), radius: 3)
             .padding()
             
-            //Stats Graph
+            //Stats & Graph
             HStack {
                 Text("Statistics")
                     .font(.subheadline)
@@ -174,10 +175,14 @@ struct HomeScreen: View {
                         AxisValueLabel()
                     }
                 }
-                .chartYScale(domain: 70...worstScore)
+                .chartYScale(domain: 70...110)
                 .frame(height: 100)
-                .padding(.horizontal, 25)
+                .padding(25)
             }
+            .background(.white)
+            .cornerRadius(10)
+            .shadow(color: .black.opacity(0.05), radius: 10)
+            .padding(.horizontal)
             
             NavigationLink( destination: PickCourse()){
                 Text("Golf")
@@ -186,17 +191,15 @@ struct HomeScreen: View {
             .frame(width: 100, height: 50)
             .background(Color(.greenApp))
             .cornerRadius(10)
-            .padding(.top, 90)
-            .shadow(color: .black.opacity(0.2), radius: 3)
+            .padding(.vertical)
             
-            Spacer()
+          
            
           
             
         }
     }
     
-    // Functions
     private func formattedDate(_ date: Date) -> String {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium

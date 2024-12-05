@@ -9,91 +9,119 @@ import SwiftUI
 
 struct GameDetailView: View {
     let round: DataModel
-    @Environment (\.dismiss) var dismiss
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
         NavigationView {
-            VStack {
+            VStack(spacing: 0) {
+                // Navigation Bar
                 HStack {
-                    Button {
-                        withAnimation(.snappy){
+                    Button(action: {
+                        withAnimation(.snappy) {
                             dismiss()
                         }
-                        
-                    }label: {
+                    }) {
                         Image(systemName: "arrow.left")
                             .imageScale(.large)
                             .foregroundStyle(.black)
                     }
                     Spacer()
                 }
-                VStack {
+                
+                // Round Details
+                VStack(spacing: 5) {
                     Image(round.image)
                         .resizable()
                         .scaledToFit()
-                        .frame(height: 100)
+                        .frame(height: 80)
                         .clipShape(RoundedRectangle(cornerRadius: 15))
-        
+                    
                     Text(round.course)
                         .font(.title3)
                         .fontWeight(.bold)
-                    Text("\(formattedDate)")
+                    
+                    Text(formattedDate)
                         .font(.caption)
+                        .foregroundStyle(.secondary)
                     
-                    VStack() {
-                        Text("Strokes: \(round.strokes)")
-                            
-                           
-                        Text("\(round.score > 0 ? "+\(round.score)" : "\(round.score)")")
-                            .foregroundStyle(Color(.red))
-                        
-                    }
-                    .font(.title3)
-                    
-                }
-               
-                HStack {
-                    Text("Results")
-                        .font(.headline)
-                        .fontWeight(.bold)
-                        
-                    Spacer()
-                }
-                Divider()
-                ScrollView(showsIndicators: false) {
-                    ForEach(round.scores.sorted(by: { $0.key < $1.key }), id: \.key) { hole, score in
-                        HStack {
-                            Text("Hole \(hole)")
-                            Spacer()
-                            Text("Par: 4")
-                            Spacer()
-                            Text("Strokes: \(score)")
+                    HStack(spacing: 15) {
+                        VStack {
+                            Text("Total Strokes")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                            Text("\(round.strokes)")
+                                .font(.title3)
+                                .fontWeight(.semibold)
                         }
-                        .padding(.horizontal)
-                        .frame(height: 20)
-                        Divider()
+                        
+                        VStack {
+                            Text("Score")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                            Text("\(round.score > 0 ? "+\(round.score)" : "\(round.score)")")
+                                .font(.title3)
+                                .fontWeight(.semibold)
+                                .foregroundStyle(round.score > 0 ? .red : .green)
+                        }
                     }
                 }
-            
                 
-                
-               
+                // Results Section
+                VStack(spacing: 8) {
+                    HStack {
+                        Text("Results")
+                            .font(.headline)
+                            .fontWeight(.bold)
+                        Spacer()
+                    }
+                    
+                    Divider()
+                    
+                    ScrollView(showsIndicators: false) {
+                        VStack(spacing: 12) {
+                            ForEach(round.scores.sorted(by: { $0.key < $1.key }), id: \.key) { hole, score in
+                                HStack {
+                                    Text("Hole \(hole)")
+                                        .fontWeight(.medium)
+                                    Spacer()
+                                    Text("Par: 4")
+                                        .foregroundStyle(.secondary)
+                                    Spacer()
+                                    Text("Strokes: \(score)")
+                                        .fontWeight(.semibold)
+                                }
+                                .padding(.horizontal)
+                                .frame(height: 30)
+                                Divider()
+                            }
+                        }
+                    }
+                }
             }
-            .padding(.horizontal)
+            .padding()
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
     }
+    
     private var formattedDate: String {
-            let formatter = DateFormatter()
-            formatter.dateStyle = .medium // You can use .short, .medium, .long, or .full
-            formatter.timeStyle = .none  // No time displayed
-            return formatter.string(from: round.date)
-        }
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        return formatter.string(from: round.date)
+    }
 }
 
 struct GameDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        let sampleRound = DataModel(date: Date(), score: 10, course: "Leksands GK", strokes: 90, image: "leksandgk", scores: [1: "4", 2: "5", 3: "3"])
+        let sampleRound = DataModel(
+            date: Date(),
+            score: 10,
+            course: "Leksands GK",
+            strokes: 90,
+            image: "leksandsgk",
+            scores: [1: "4", 2: "5", 3: "3"]
+        )
         
         return GameDetailView(round: sampleRound)
     }

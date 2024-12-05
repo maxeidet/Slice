@@ -45,20 +45,22 @@ struct GolfingScreen: View {
                         .font(.subheadline)
                 }
             }
-            .padding()
+            .padding(.horizontal)
             
-            
+            VStack{
+                
+            }
+            .frame(height: 20)
             
             HoleCard(
                 holeNumber: course.holes[currentHole].number,
                 par: course.holes[currentHole].par,
                 index: course.holes[currentHole].index,
                 imageName: course.holes[currentHole].imageName,
-                greenLocation: course.holeLocations[course.holes[currentHole].number] ?? CLLocationCoordinate2D(latitude: 0, longitude: 0)
+                greenLocation: course.holeLocations[course.holes[currentHole].number] ?? CLLocationCoordinate2D(latitude: 58.40344449632029, longitude: 15.579884381028368)
             )
             
-         
-            if currentHole == 8 {
+            if currentHole == 9 {
                 Button(action: {
                     finishRound()
                 }, label: {
@@ -66,6 +68,7 @@ struct GolfingScreen: View {
                     
                 })
             }
+            Spacer()
             
             // Open Scorecard Modal Button
             Button(action: {

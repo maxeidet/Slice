@@ -24,6 +24,7 @@
 		4D5231B02CF7855000505551 /* ScorecardModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5231AF2CF7855000505551 /* ScorecardModal.swift */; };
 		4D5231B22CF798A100505551 /* HoleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5231B12CF798A100505551 /* HoleCard.swift */; };
 		4D5231B62CF8F1BE00505551 /* HcpCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5231B52CF8F1BE00505551 /* HcpCalculator.swift */; };
+		4D5231B82CF9F6D200505551 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5231B72CF9F6D200505551 /* EditProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		4D5231AF2CF7855000505551 /* ScorecardModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorecardModal.swift; sourceTree = "<group>"; };
 		4D5231B12CF798A100505551 /* HoleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoleCard.swift; sourceTree = "<group>"; };
 		4D5231B52CF8F1BE00505551 /* HcpCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HcpCalculator.swift; sourceTree = "<group>"; };
+		4D5231B72CF9F6D200505551 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				4D5231A22CF741FE00505551 /* Components */,
 				4D52318A2CF6587100505551 /* HomeScreen.swift */,
 				4D5231AD2CF780C700505551 /* GolfingScreen.swift */,
+				4D5231B72CF9F6D200505551 /* EditProfileView.swift */,
 				4D5231A92CF7701100505551 /* CourseDataModel.swift */,
 				4D5231AB2CF7758E00505551 /* LocationManager.swift */,
 				4D5231A02CF741F500505551 /* RecentCard.swift */,
@@ -186,6 +189,7 @@
 			files = (
 				4D5231B62CF8F1BE00505551 /* HcpCalculator.swift in Sources */,
 				4D52317D2CF6582400505551 /* ContentView.swift in Sources */,
+				4D5231B82CF9F6D200505551 /* EditProfileView.swift in Sources */,
 				4D52319D2CF66AC100505551 /* DataModel.swift in Sources */,
 				4D5231A12CF741F500505551 /* RecentCard.swift in Sources */,
 				4D5231AC2CF7758E00505551 /* LocationManager.swift in Sources */,

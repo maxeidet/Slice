@@ -18,6 +18,8 @@ struct AllRounds: View {
             // Navigation back button
             HStack {
                 Button(action: {
+                    isSortedByBestScore = false
+                    sortRounds()
                     dismiss()
                 }, label: {
                     Image(systemName: "arrow.backward")
@@ -173,7 +175,7 @@ struct AllRounds_Previews: PreviewProvider {
     static var previews: some View {
         let roundData = RoundData()
         roundData.rounds = [
-            DataModel(date: createDate(year: 2024, month: 9, day: 10), score: 19, course: "Linköpings GK", strokes: 90, image: "lgk",
+            DataModel(date: createDate(year: 2024, month: 9, day: 10), score: 19, course: "Linköpings GK", strokes: 90, image: "lkgk",
                       scores: [1: "4", 2: "5", 3: "3"]),
             DataModel(date: createDate(year: 2024, month: 10, day: 5), score: 14, course: "Leksands GK", strokes: 85, image: "lgk",
                       scores: [1: "4", 2: "5", 3: "3"]),

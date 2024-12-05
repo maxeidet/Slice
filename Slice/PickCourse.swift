@@ -6,7 +6,7 @@ struct PickCourse: View {
     @State private var courseDistances: [String: Double] = [:]
     //@State private var courses: [Course] = [linkopingGK, leksandsGK, rattviksGK] // Example courses
     @State private var courses: [Course] = CourseRepository.allCourses
-    @ObservedObject var locationManager = LocationManager() // Inject your LocationManager
+    @StateObject private var locationManager = LocationManager()
 
     var filteredCourses: [String] {
         if searchQuery.isEmpty {

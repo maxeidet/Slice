@@ -14,11 +14,13 @@ struct HoleCard: View {
     let index: Int
     let imageName: String
     let greenLocation: CLLocationCoordinate2D
+    @StateObject private var locationManager = LocationManager()
+    
     var body: some View {
         VStack {
-            VStack{
+            VStack {
                 HStack {
-                    VStack{
+                    VStack {
                         Text("\(holeNumber)")
                             .font(.largeTitle)
                             .fontWeight(.bold)
@@ -28,17 +30,29 @@ struct HoleCard: View {
                     Divider()
                         .background(.black)
                     Spacer()
-                    VStack(alignment: .leading){
+                    VStack(alignment: .leading) {
                         Text("Par: \(par)")
                             .font(.subheadline)
                         
                         Text("Index: \(index)")
                             .font(.subheadline)
-                        Text("Distance: 327m")
-                            .font(.subheadline)
+                        
+                    
+                        if let distance = locationManager.distance {
+                            Text("Distance: \(String(format: "%.0f", distance))m")
+                                .font(.subheadline)
+                        } else {
+                            VStack {
+                                Image(systemName: "cellularbars")
+                                    .foregroundStyle(Color(.red))
+                                Text("Calculating distance...")
+                                    .font(.subheadline)
+                               
+                            }
+                           
+                        }
                     }
                     .frame(width: 150)
-                    
                 }
                 .padding()
                 .frame(width: 250, height: 100)
@@ -53,7 +67,14 @@ struct HoleCard: View {
                 .scaledToFit()
                 .frame(height: 400)
         }
-        
+        .onAppear {
+            // Start updating the location when the view appears
+            locationManager.startUpdatingLocation(to: greenLocation)
+        }
+        .onDisappear {
+            // Stop updating the location when the view disappears
+            locationManager.stopUpdatingLocation()
+        }
     }
 }
 
@@ -63,5 +84,6 @@ struct HoleCard: View {
         par: 4,
         index: 11,
         imageName: "hole1",
-        greenLocation: CLLocationCoordinate2D(latitude: 59.3293, longitude: 18.0686))
+        greenLocation: CLLocationCoordinate2D(latitude: 59.3293, longitude: 18.0686)
+    )
 }
