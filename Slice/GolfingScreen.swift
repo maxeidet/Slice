@@ -12,11 +12,12 @@ struct GolfingScreen: View {
     @State private var currentHole = 0
     @State private var scores: [Int: String] = [:]
     @State private var strokes = 0
+    @State private var shots: [Shot] = []
     @Environment(\.dismiss) var dismiss
     var course: Course
     @State private var isShowingScorecard = false
     @EnvironmentObject var roundData: RoundData
-    
+    @StateObject private var locationManager = LocationManager()
     var body: some View {
         NavigationStack {
             HStack {
@@ -35,7 +36,7 @@ struct GolfingScreen: View {
                     if currentHole < course.holes.count - 1 {
                         currentHole += 1
                     } else {
-                        //currentHole = 0
+                        
                     }
                 }) {
                     Text("Next")
@@ -69,6 +70,12 @@ struct GolfingScreen: View {
                 })
             }
             Spacer()
+            
+            Button(action: {
+                registerShot(holeNumber:currentHole + 1)
+            }) {
+                Text("Reg")
+            }
             
             // Open Scorecard Modal Button
             Button(action: {
@@ -107,6 +114,17 @@ struct GolfingScreen: View {
             )
             roundData.addRound(newRound)
         }
+    private func registerShot(holeNumber: Int) {
+        guard let coordinates = locationManager.getCurrentCoordinates() else {
+            print("Could not get location")
+            return
+        }
+        
+        let shotNumber = shots.filter { $0.holeNumber == holeNumber }.count + 1
+        let newShot = Shot(holeNumber: holeNumber, shotNumber: shotNumber, latitude: coordinates.latitude, longitude: coordinates.longitude)
+        shots.append(newShot)
+        print("Shot \(shotNumber) for hole \(holeNumber) registered at (\(coordinates.latitude), \(coordinates.longitude))")
+    }
     
 }
 

@@ -24,9 +24,9 @@ struct AllRounds: View {
                 }, label: {
                     Image(systemName: "arrow.backward")
                         .foregroundStyle(Color(.black))
-                        .frame(width: 30, height: 30)
-                        .background(.lightGrayApp)
-                        .clipShape(Circle())
+                        //.frame(width: 30, height: 30)
+                        //.background(.lightGrayApp)
+                       //.clipShape(Circle())
                 })
                 Spacer()
             }
@@ -140,6 +140,8 @@ struct AllRounds: View {
                 }
                 
             }
+            .scrollIndicators(.hidden)
+           
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)

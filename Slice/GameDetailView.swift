@@ -67,7 +67,7 @@ struct GameDetailView: View {
                 }
                 
                 // Results Section
-                VStack(spacing: 8) {
+               /* VStack(spacing: 8) {
                     HStack {
                         Text("Results")
                             .font(.headline)
@@ -96,9 +96,15 @@ struct GameDetailView: View {
                             }
                         }
                     }
+                }*/
+                VStack {
+                    ResultScoreCard(scores: round.scores)
                 }
+                .padding()
+               
+                Spacer()
             }
-            .padding()
+            .padding(.horizontal)
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
@@ -120,7 +126,17 @@ struct GameDetailView_Previews: PreviewProvider {
             course: "Leksands GK",
             strokes: 90,
             image: "leksandsgk",
-            scores: [1: "4", 2: "5", 3: "3"]
+            scores: [
+                1: "4",
+                2: "5",
+                3: "3",
+                4: "4",
+                5: "3",
+                6: "4",
+                7: "3",
+                8: "5",
+                9: "4"
+            ]
         )
         
         return GameDetailView(round: sampleRound)

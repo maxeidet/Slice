@@ -76,6 +76,7 @@ struct HoleCard: View {
             locationManager.stopUpdatingLocation()
         }
     }
+    
 }
 
 #Preview {

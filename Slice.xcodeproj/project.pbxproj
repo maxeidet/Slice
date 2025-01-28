@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D4CC6052D185F5500F9249A /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4CC6042D185F5500F9249A /* Test.swift */; };
 		4D52317B2CF6582400505551 /* SliceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D52317A2CF6582400505551 /* SliceApp.swift */; };
 		4D52317D2CF6582400505551 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D52317C2CF6582400505551 /* ContentView.swift */; };
 		4D52317F2CF6582700505551 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D52317E2CF6582700505551 /* Assets.xcassets */; };
@@ -25,9 +26,12 @@
 		4D5231B22CF798A100505551 /* HoleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5231B12CF798A100505551 /* HoleCard.swift */; };
 		4D5231B62CF8F1BE00505551 /* HcpCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5231B52CF8F1BE00505551 /* HcpCalculator.swift */; };
 		4D5231B82CF9F6D200505551 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5231B72CF9F6D200505551 /* EditProfileView.swift */; };
+		4DBF0CE52D484EDB005EFB7F /* GolfMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBF0CE42D484EDB005EFB7F /* GolfMapView.swift */; };
+		4DFDE2B62D076A4F0019EF37 /* ResultScoreCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFDE2B52D076A4F0019EF37 /* ResultScoreCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D4CC6042D185F5500F9249A /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		4D5231772CF6582400505551 /* Slice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D52317A2CF6582400505551 /* SliceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliceApp.swift; sourceTree = "<group>"; };
 		4D52317C2CF6582400505551 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,6 +51,8 @@
 		4D5231B12CF798A100505551 /* HoleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoleCard.swift; sourceTree = "<group>"; };
 		4D5231B52CF8F1BE00505551 /* HcpCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HcpCalculator.swift; sourceTree = "<group>"; };
 		4D5231B72CF9F6D200505551 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		4DBF0CE42D484EDB005EFB7F /* GolfMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GolfMapView.swift; sourceTree = "<group>"; };
+		4DFDE2B52D076A4F0019EF37 /* ResultScoreCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultScoreCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,10 +90,12 @@
 				4D5231A72CF76C7800505551 /* PickCourse.swift */,
 				4D5231A22CF741FE00505551 /* Components */,
 				4D52318A2CF6587100505551 /* HomeScreen.swift */,
+				4D4CC6042D185F5500F9249A /* Test.swift */,
 				4D5231AD2CF780C700505551 /* GolfingScreen.swift */,
 				4D5231B72CF9F6D200505551 /* EditProfileView.swift */,
 				4D5231A92CF7701100505551 /* CourseDataModel.swift */,
 				4D5231AB2CF7758E00505551 /* LocationManager.swift */,
+				4DBF0CE42D484EDB005EFB7F /* GolfMapView.swift */,
 				4D5231A02CF741F500505551 /* RecentCard.swift */,
 				4D5231A32CF7545100505551 /* AllRounds.swift */,
 				4D5231A52CF76AC400505551 /* GameDetailView.swift */,
@@ -113,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				4D5231B12CF798A100505551 /* HoleCard.swift */,
+				4DFDE2B52D076A4F0019EF37 /* ResultScoreCard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -192,11 +201,14 @@
 				4D5231B82CF9F6D200505551 /* EditProfileView.swift in Sources */,
 				4D52319D2CF66AC100505551 /* DataModel.swift in Sources */,
 				4D5231A12CF741F500505551 /* RecentCard.swift in Sources */,
+				4DFDE2B62D076A4F0019EF37 /* ResultScoreCard.swift in Sources */,
 				4D5231AC2CF7758E00505551 /* LocationManager.swift in Sources */,
 				4D5231AE2CF780C700505551 /* GolfingScreen.swift in Sources */,
+				4DBF0CE52D484EDB005EFB7F /* GolfMapView.swift in Sources */,
 				4D5231A42CF7545100505551 /* AllRounds.swift in Sources */,
 				4D5231AA2CF7701100505551 /* CourseDataModel.swift in Sources */,
 				4D5231B22CF798A100505551 /* HoleCard.swift in Sources */,
+				4D4CC6052D185F5500F9249A /* Test.swift in Sources */,
 				4D52317B2CF6582400505551 /* SliceApp.swift in Sources */,
 				4D52319F2CF66EB200505551 /* UserData.swift in Sources */,
 				4D5231B02CF7855000505551 /* ScorecardModal.swift in Sources */,

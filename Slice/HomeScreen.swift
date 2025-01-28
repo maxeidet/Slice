@@ -64,9 +64,6 @@ struct HomeScreen: View {
                             .underline()
                             .foregroundStyle(Color(.black))
                     }
-                        
-                    
-                        
                 }
             }
             .padding(.horizontal)
@@ -104,12 +101,9 @@ struct HomeScreen: View {
                                 .frame(width: 30, height: 30)
                             Image("norge")
                                 .resizable()
-                               
                                 .clipShape(Circle())
                                 .frame(width: 30, height: 30)
-                            
                         }
-                        
                     }
                     Spacer()
                     Image("world")
@@ -120,7 +114,6 @@ struct HomeScreen: View {
                 .padding(.horizontal)
             }
             .frame(height: 150)
-            //.background(Color(.white))
             .background(Color(.beige))
             .cornerRadius(20)
             .shadow(color: .black.opacity(0.2), radius: 3)

@@ -77,4 +77,10 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         
         return distances
     }
+    func getCurrentCoordinates() -> CLLocationCoordinate2D? {
+        guard let location = locationManager.location else {
+            return nil
+        }
+        return location.coordinate
+    }
 }
