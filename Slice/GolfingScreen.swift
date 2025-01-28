@@ -47,11 +47,10 @@ struct GolfingScreen: View {
                 }
             }
             .padding(.horizontal)
+            Image(course.image)
+                .resizable()
+                .frame(width: 50, height: 50)
             
-            VStack{
-                
-            }
-            .frame(height: 20)
             
             HoleCard(
                 holeNumber: course.holes[currentHole].number,
@@ -61,11 +60,12 @@ struct GolfingScreen: View {
                 greenLocation: course.holeLocations[course.holes[currentHole].number] ?? CLLocationCoordinate2D(latitude: 58.40344449632029, longitude: 15.579884381028368)
             )
             
-            if currentHole == 9 {
+            if currentHole == 8 {
                 Button(action: {
                     finishRound()
                 }, label: {
                     Text("Finnish")
+                        .foregroundStyle(.blue)
                     
                 })
             }
@@ -87,7 +87,7 @@ struct GolfingScreen: View {
                     .foregroundColor(.white)
                     .cornerRadius(10)
             }
-            .padding()
+            .padding(.bottom)
             .shadow(color: .black.opacity(0.2), radius: 3)
             
             Spacer()
@@ -110,7 +110,8 @@ struct GolfingScreen: View {
                 course: course.name,
                 strokes: totalStrokes(),
                 image: course.image,
-                scores: scores
+                scores: scores,
+                shots: shots
             )
             roundData.addRound(newRound)
         }

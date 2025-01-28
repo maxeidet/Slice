@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GameDetailView: View {
     let round: DataModel
+    
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -66,41 +67,39 @@ struct GameDetailView: View {
                     }
                 }
                 
-                // Results Section
-               /* VStack(spacing: 8) {
+                VStack {
+                    NavigationLink(destination: {
+                        if let course = CourseRepository.allCourses.first(where: { $0.name.trimmingCharacters(in: .whitespacesAndNewlines).localizedCaseInsensitiveCompare(round.course.trimmingCharacters(in: .whitespacesAndNewlines)) == .orderedSame }) {
+                            GolfMapView(shots: round.shots, course: course)
+                        } else {
+                            Text("Course not found")
+                        }
+                        }) {
+                            HStack {
+                                Text("Map Overview")
+                                Image(systemName: "mappin.and.ellipse")
+                                    .foregroundStyle(.greenApp)
+                            }
+                            .padding()
+                            .background(Color.white)
+                            .cornerRadius(10)
+                            .shadow(radius: 3)
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        .padding()
+                }
+                .padding(.top)
+                
+                VStack {
                     HStack {
-                        Text("Results")
-                            .font(.headline)
-                            .fontWeight(.bold)
+                        Text("Scorecard")
                         Spacer()
                     }
-                    
-                    Divider()
-                    
-                    ScrollView(showsIndicators: false) {
-                        VStack(spacing: 12) {
-                            ForEach(round.scores.sorted(by: { $0.key < $1.key }), id: \.key) { hole, score in
-                                HStack {
-                                    Text("Hole \(hole)")
-                                        .fontWeight(.medium)
-                                    Spacer()
-                                    Text("Par: 4")
-                                        .foregroundStyle(.secondary)
-                                    Spacer()
-                                    Text("Strokes: \(score)")
-                                        .fontWeight(.semibold)
-                                }
-                                .padding(.horizontal)
-                                .frame(height: 30)
-                                Divider()
-                            }
-                        }
-                    }
-                }*/
-                VStack {
                     ResultScoreCard(scores: round.scores)
                 }
                 .padding()
+                
+                
                
                 Spacer()
             }
@@ -136,6 +135,11 @@ struct GameDetailView_Previews: PreviewProvider {
                 7: "3",
                 8: "5",
                 9: "4"
+            ], shots: [
+                Shot(holeNumber: 1, shotNumber: 1, latitude: 58.401394, longitude: 15.566986),
+                Shot(holeNumber: 1, shotNumber: 2, latitude: 58.401799, longitude: 15.565249),
+                Shot(holeNumber: 2, shotNumber: 1, latitude: 58.401206, longitude: 15.562332),
+                Shot(holeNumber: 2, shotNumber: 2, latitude: 58.401271, longitude: 15.560216)
             ]
         )
         

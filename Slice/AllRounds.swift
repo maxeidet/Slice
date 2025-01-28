@@ -178,11 +178,26 @@ struct AllRounds_Previews: PreviewProvider {
         let roundData = RoundData()
         roundData.rounds = [
             DataModel(date: createDate(year: 2024, month: 9, day: 10), score: 19, course: "Linköpings GK", strokes: 90, image: "lkgk",
-                      scores: [1: "4", 2: "5", 3: "3"]),
+                      scores: [1: "4", 2: "5", 3: "3"], shots: [
+                        Shot(holeNumber: 1, shotNumber: 1, latitude: 58.401394, longitude: 15.566986),
+                        Shot(holeNumber: 1, shotNumber: 2, latitude: 58.401799, longitude: 15.565249),
+                        Shot(holeNumber: 2, shotNumber: 1, latitude: 58.401206, longitude: 15.562332),
+                        Shot(holeNumber: 2, shotNumber: 2, latitude: 58.401271, longitude: 15.560216)
+                    ]),
             DataModel(date: createDate(year: 2024, month: 10, day: 5), score: 14, course: "Leksands GK", strokes: 85, image: "lgk",
-                      scores: [1: "4", 2: "5", 3: "3"]),
+                      scores: [1: "4", 2: "5", 3: "3"], shots: [
+                        Shot(holeNumber: 1, shotNumber: 1, latitude: 58.401394, longitude: 15.566986),
+                        Shot(holeNumber: 1, shotNumber: 2, latitude: 58.401799, longitude: 15.565249),
+                        Shot(holeNumber: 2, shotNumber: 1, latitude: 58.401206, longitude: 15.562332),
+                        Shot(holeNumber: 2, shotNumber: 2, latitude: 58.401271, longitude: 15.560216)
+                    ]),
             DataModel(date: Date(), score: 17, course: "Lidingö Gk", strokes: 88, image: "ligk",
-                      scores: [1: "4", 2: "5", 3: "3"])
+                      scores: [1: "4", 2: "5", 3: "3"], shots: [
+                        Shot(holeNumber: 1, shotNumber: 1, latitude: 58.401394, longitude: 15.566986),
+                        Shot(holeNumber: 1, shotNumber: 2, latitude: 58.401799, longitude: 15.565249),
+                        Shot(holeNumber: 2, shotNumber: 1, latitude: 58.401206, longitude: 15.562332),
+                        Shot(holeNumber: 2, shotNumber: 2, latitude: 58.401271, longitude: 15.560216)
+                    ])
         ]
 
         return AllRounds()

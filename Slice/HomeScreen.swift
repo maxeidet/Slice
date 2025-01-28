@@ -186,10 +186,7 @@ struct HomeScreen: View {
             .cornerRadius(10)
             .padding(.vertical)
             
-          
-           
-          
-            
+
         }
     }
     
