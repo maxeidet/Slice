@@ -44,6 +44,10 @@ struct GolfMapView: View {
                 ) {
                     Button(action: {
                         selectedShot = shot
+                        if let selectedShot = selectedShot {
+                            region.center = CLLocationCoordinate2D(latitude: selectedShot.latitude, longitude: selectedShot.longitude)
+                        }
+                        
                         withAnimation {
                             showPopup = true
                         }
@@ -61,11 +65,6 @@ struct GolfMapView: View {
             .edgesIgnoringSafeArea(.all)
             
             VStack {
-                VStack {
-                    // Very bad solution maybe fix!?!?
-                }
-                .frame(height: 1)
-                
                 HStack {
                     if !isExpanded {
                         Button(action: {
@@ -76,7 +75,9 @@ struct GolfMapView: View {
                             Image(systemName: "arrow.left")
                                 .imageScale(.large)
                                 .foregroundStyle(.white)
+                                .padding()
                         }
+                        
                        
                         Spacer()
                         Button(action: {
@@ -191,8 +192,7 @@ struct GolfMapView: View {
                 .opacity(showInfo ? 0 : 1)
                 .padding()
             }
-            
-            
+    
             if showInfo {
                 VStack {
                     Text("Information")
@@ -213,13 +213,13 @@ struct GolfMapView: View {
                     }) {
                         Text("Close")
                             .foregroundColor(.white)
-                            .padding()
+                            .frame(width: 100, height: 40)
                             .background(Color.greenApp)
                             .cornerRadius(12)
                     }
                     
                 }
-                .frame(maxWidth: 300)
+                .frame(maxWidth: 250)
                 .padding()
                 .background(Color.white.opacity(1))
                 .cornerRadius(12)
@@ -234,17 +234,15 @@ struct GolfMapView: View {
     
     private func calculateDistance(for shot: Shot) -> Double? {
         if shot.shotNumber == 1, let teePosition = course.teePositions[shot.holeNumber] {
-            // Calculate distance from tee position if it's the first shot on the hole
+    
             let teeLocation = CLLocation(latitude: teePosition.latitude, longitude: teePosition.longitude)
             let shotLocation = CLLocation(latitude: shot.latitude, longitude: shot.longitude)
             return teeLocation.distance(from: shotLocation)
         } else {
-            // Calculate distance from the previous shot
             guard let currentIndex = shots.firstIndex(where: { $0.id == shot.id }),
                   currentIndex > 0 else {
                 return nil
             }
-            
             let previousShot = shots[currentIndex - 1]
             let currentLocation = CLLocation(latitude: shot.latitude, longitude: shot.longitude)
             let previousLocation = CLLocation(latitude: previousShot.latitude, longitude: previousShot.longitude)
@@ -284,7 +282,8 @@ struct GolfMapView: View {
         Shot(holeNumber: 2, shotNumber: 2, latitude: 58.40127176130382, longitude: 15.560216203618987),
         Shot(holeNumber: 2, shotNumber: 3, latitude: 58.401264100302086, longitude: 15.558860090736307),
         Shot(holeNumber: 2, shotNumber: 4, latitude: 58.40113577407895, longitude: 15.558788189566712),
-        Shot(holeNumber: 3, shotNumber: 1, latitude: 58.40208360199551, longitude: 15.556984825520628)
+        Shot(holeNumber: 3, shotNumber: 1, latitude: 58.40208360199551, longitude: 15.556984825520628),
+        Shot(holeNumber: 4, shotNumber: 1, latitude:  58.402620741291514, longitude: 15.56008540344026)
     ]
 
     return GolfMapView(shots: mockShots, course: linkopingGK)

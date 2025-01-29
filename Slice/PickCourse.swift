@@ -87,7 +87,6 @@ struct PickCourse: View {
                                 Divider()
                             }
                         }
-                      
                     }
                 }
                 .padding()

@@ -58,6 +58,7 @@ let linkopingGKTeePositions: [Int: CLLocationCoordinate2D] = [
     1: CLLocationCoordinate2D(latitude: 58.401200979035984, longitude: 15.569810644007386),
     2: CLLocationCoordinate2D(latitude: 58.40208415830721, longitude: 15.56432471183862),
     3: CLLocationCoordinate2D(latitude: 58.40117445097692,  longitude: 15.557950096096771),
+    4: CLLocationCoordinate2D(latitude:  58.40239606016642, longitude: 15.556298194570905),
 ]
 
 let linkopingGK = Course(holeLocations: linkopingGKHoleLocations, holes: linkopingGKHoles, image: "lkgk", name: "Linköpings GK", location: CLLocationCoordinate2D(latitude: 58.40127382191677, longitude: 15.570044023848054), teePositions: linkopingGKTeePositions)
