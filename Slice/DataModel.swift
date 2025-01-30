@@ -70,7 +70,7 @@ class RoundData: ObservableObject {
             Shot(holeNumber: 2, shotNumber: 3, latitude: 58.401264100302086, longitude: 15.558860090736307),
             Shot(holeNumber: 2, shotNumber: 4, latitude: 58.40113577407895, longitude: 15.558788189566712)]
                  ),
-        DataModel(date: createDate(year: 2024, month: 09, day: 10), score: 14, course: "Linköpings GK", strokes: 90, image: "lkgk", scores: [1: "4", 2: "5", 3: "4", 4: "4", 5: "3", 6: "5", 7: "3", 8: "4", 9: "5", 10: "4", 11: "3", 12: "5", 13: "4", 14: "5", 15: "3", 16: "5", 17: "4", 18: "4"], shots: [
+        DataModel(date: createDate(year: 2025, month: 01, day: 29), score: 14, course: "Linköpings GK", strokes: 90, image: "lkgk", scores: [1: "4", 2: "5", 3: "4", 4: "4", 5: "3", 6: "5", 7: "3", 8: "4", 9: "5", 10: "4", 11: "3", 12: "5", 13: "4", 14: "5", 15: "3", 16: "5", 17: "4", 18: "4"], shots: [
             Shot(holeNumber: 1, shotNumber: 1, latitude: 58.401394842084194, longitude: 15.566985744961919),
             Shot(holeNumber: 1, shotNumber: 2, latitude: 58.40179933198633, longitude: 15.565249477216707),
             Shot(holeNumber: 1, shotNumber: 3, latitude: 58.40199553526756, longitude: 15.564907567829115),
@@ -83,7 +83,7 @@ class RoundData: ObservableObject {
            
             Shot(holeNumber: 3, shotNumber: 1, latitude:  58.402620741291514, longitude: 15.56008540344026)]
                  ),
-        DataModel(date: createDate(year: 2024, month: 09, day: 28), score: 14, course: "Linköpings GK", strokes: 100, image: "lkgk", scores: [1: "5", 2: "4", 3: "5", 4: "4", 5: "5", 6: "6", 7: "4", 8: "5", 9: "5", 10: "6", 11: "4", 12: "5", 13: "5", 14: "4", 15: "6", 16: "5", 17: "5", 18: "6"], shots: [
+        DataModel(date: createDate(year: 2025, month: 01, day: 28), score: 14, course: "Linköpings GK", strokes: 100, image: "lkgk", scores: [1: "5", 2: "4", 3: "5", 4: "4", 5: "5", 6: "6", 7: "4", 8: "5", 9: "5", 10: "6", 11: "4", 12: "5", 13: "5", 14: "4", 15: "6", 16: "5", 17: "5", 18: "6"], shots: [
             Shot(holeNumber: 1, shotNumber: 1, latitude: 58.401394842084194, longitude: 15.566985744961919),
             Shot(holeNumber: 1, shotNumber: 2, latitude: 58.40179933198633, longitude: 15.565249477216707),
             Shot(holeNumber: 1, shotNumber: 3, latitude: 58.40199553526756, longitude: 15.564907567829115),

@@ -50,21 +50,24 @@ struct ScorecardModal: View {
     
     private var scorecard: some View {
         VStack(spacing: 0) {
-            createHeaderRow(label: "Hole", values: course.holes.map { "\($0.number)" }, backgroundColor: .greenApp, foregroundColor: .white)
+            let front9 = course.holes.prefix(9)  // First 9 holes
+            let back9 = course.holes.suffix(9)   // Last 9 holes
+            // Front 9
+            createHeaderRow(label: "Hole", values: front9.map { "\($0.number)" }, backgroundColor: .greenApp, foregroundColor: .white)
                 .clipShape(
                     RoundedCornerShape(corners: [.topLeft, .topRight], radius: 10)
                 )
-            createHeaderRow(label: "Hcp", values: course.holes.map { "\($0.index)" }, backgroundColor: .white, foregroundColor: .black)
-            createHeaderRow(label: "Par", values: course.holes.map { "\($0.par)" }, backgroundColor: .lightGrayApp, foregroundColor: .black)
-            createScoreRow(label: "Strokes", values: course.holes.indices.map { scores[$0] ?? "-" }, backgroundColor: .white, foregroundColor: .black)
-            createScoreRow(label: "Points", values: course.holes.map { _ in "-" }, backgroundColor: .lightGrayApp, foregroundColor: .black)
-            
-            //last 18
-            createHeaderRow(label: "Hole", values: course.holes.map { "\($0.number)" }, backgroundColor: .greenApp, foregroundColor: .white)
-            createHeaderRow(label: "Hcp", values: course.holes.map { "\($0.index)" }, backgroundColor: .white, foregroundColor: .black)
-            createHeaderRow(label: "Par", values: course.holes.map { "\($0.par)" }, backgroundColor: .lightGrayApp, foregroundColor: .black)
-            createScoreRow(label: "Strokes", values: course.holes.indices.map { scores[$0] ?? "-" }, backgroundColor: .white, foregroundColor: .black)
-            createScoreRow(label: "Points", values: course.holes.map { _ in "-" }, backgroundColor: .lightGrayApp, foregroundColor: .black)
+            createHeaderRow(label: "Hcp", values: front9.map { "\($0.index)" }, backgroundColor: .white, foregroundColor: .black)
+            createHeaderRow(label: "Par", values: front9.map { "\($0.par)" }, backgroundColor: .lightGrayApp, foregroundColor: .black)
+            createScoreRow(label: "Strokes", values: front9.map { scores[$0.number] ?? "-" }, backgroundColor: .white, foregroundColor: .black)
+            createScoreRow(label: "Points", values: front9.map { _ in "-" }, backgroundColor: .lightGrayApp, foregroundColor: .black)
+
+            // Back 9
+            createHeaderRow(label: "Hole", values: back9.map { "\($0.number)" }, backgroundColor: .greenApp, foregroundColor: .white)
+            createHeaderRow(label: "Hcp", values: back9.map { "\($0.index)" }, backgroundColor: .white, foregroundColor: .black)
+            createHeaderRow(label: "Par", values: back9.map { "\($0.par)" }, backgroundColor: .lightGrayApp, foregroundColor: .black)
+            createScoreRow(label: "Strokes", values: back9.map { scores[$0.number] ?? "-" }, backgroundColor: .white, foregroundColor: .black)
+            createScoreRow(label: "Points", values: back9.map { _ in "-" }, backgroundColor: .lightGrayApp, foregroundColor: .black)
             
             HStack {
                 Text("Total: \(totalStrokes ())")

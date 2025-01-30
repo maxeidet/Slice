@@ -64,6 +64,7 @@ struct GolfMapView: View {
             .mapStyle(.imagery)
             .edgesIgnoringSafeArea(.all)
             
+            // TopView
             VStack {
                 HStack {
                     if !isExpanded {
@@ -74,16 +75,17 @@ struct GolfMapView: View {
                         }) {
                             Image(systemName: "arrow.left")
                                 .imageScale(.large)
-                                .foregroundStyle(.white)
-                                .padding()
+                                .foregroundStyle(.black)
                         }
+                        .frame(width: 40, height: 40)
+                        .background(.white)
+                        .cornerRadius(10)
                         
-                       
                         Spacer()
                         Button(action: {
                             withAnimation {
                                 isExpanded.toggle()
-                                currentShotIndex = 0
+                                
                             }
                         }) {
                           
@@ -96,12 +98,11 @@ struct GolfMapView: View {
                     
                     }
                     
-                    
                     if isExpanded {
                         Button(action: {
                             withAnimation {
                                 isExpanded.toggle()
-                                currentShotIndex = 0
+                                currentShotIndex = -1
                             }
                         }) {
                             
@@ -134,10 +135,9 @@ struct GolfMapView: View {
                 .background(isExpanded ? Color.white : Color.clear)
                 .cornerRadius(12)
                 .animation(.easeInOut, value: isExpanded)
-                .padding()
+                .padding(.horizontal)
                 
-                
-                
+               
                 if showPopup, let shot = selectedShot {
                     VStack {
                         Button(action: {
@@ -265,7 +265,10 @@ struct GolfMapView: View {
         
         // Center the map on the selected shot
         if let selectedShot = selectedShot {
-            region.center = CLLocationCoordinate2D(latitude: selectedShot.latitude, longitude: selectedShot.longitude)
+            region = MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: selectedShot.latitude, longitude: selectedShot.longitude),
+                span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+            )
         }
     }
 }
@@ -278,7 +281,7 @@ struct GolfMapView: View {
         Shot(holeNumber: 1, shotNumber: 3, latitude: 58.40199553526756, longitude: 15.564907567829115),
 
      
-        Shot(holeNumber: 2, shotNumber: 1, latitude: 58.40120641330053, longitude: 15.562332240600057),
+        Shot(holeNumber: 2, shotNumber: 1, latitude: 58.40099221696854, longitude: 15.561774661393601),
         Shot(holeNumber: 2, shotNumber: 2, latitude: 58.40127176130382, longitude: 15.560216203618987),
         Shot(holeNumber: 2, shotNumber: 3, latitude: 58.401264100302086, longitude: 15.558860090736307),
         Shot(holeNumber: 2, shotNumber: 4, latitude: 58.40113577407895, longitude: 15.558788189566712),

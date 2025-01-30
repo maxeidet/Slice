@@ -129,7 +129,7 @@ struct HomeScreen: View {
             .padding(.horizontal)
             
             VStack {
-                Chart(roundData.rounds) { round in
+                Chart(roundData.rounds.sorted(by: { $0.date < $1.date })) { round in
                     LineMark(
                         x: .value("Date", round.date),
                         y: .value("Total Strokes", round.strokes)
@@ -177,6 +177,7 @@ struct HomeScreen: View {
             .shadow(color: .black.opacity(0.05), radius: 10)
             .padding(.horizontal)
             
+            /*
             NavigationLink( destination: PickCourse()){
                 Text("Golf")
                     .foregroundStyle(Color(.white))
@@ -185,7 +186,20 @@ struct HomeScreen: View {
             .background(Color(.greenApp))
             .cornerRadius(10)
             .padding(.vertical)
-            
+            */
+            NavigationLink( destination: PickCourse()){
+                Text("Play")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .padding()
+                    .frame(width: 150)
+                    .background(.greenApp)
+                    .cornerRadius(12)
+                    .padding(.horizontal)
+            }
+            .shadow(radius: 8)
+            .padding(.vertical)
+            Spacer()
 
         }
     }

@@ -52,6 +52,17 @@ let linkopingGKHoles = [
     Holes(number: 7, par: 3, index: 14, imageName: "hole7"),
     Holes(number: 8, par: 4, index: 12, imageName: "hole8"),
     Holes(number: 9, par: 4, index: 4, imageName: "hole9"),
+    
+    // Back 10 - 18
+    Holes(number: 10, par: 4, index: 9, imageName: "hole10"),
+    Holes(number: 11, par: 5, index: 3, imageName: "hole11"),
+    Holes(number: 12, par: 3, index: 17, imageName: "hole12"),
+    Holes(number: 13, par: 4, index: 11, imageName: "hole13"),
+    Holes(number: 14, par: 5, index: 1, imageName: "hole14"),
+    Holes(number: 15, par: 3, index: 15, imageName: "hole15"),
+    Holes(number: 16, par: 4, index: 7, imageName: "hole16"),
+    Holes(number: 17, par: 4, index: 5, imageName: "hole17"),
+    Holes(number: 18, par: 5, index: 13, imageName: "hole18")
 ]
 
 let linkopingGKTeePositions: [Int: CLLocationCoordinate2D] = [
