@@ -17,6 +17,6 @@ class UserViewModel: ObservableObject {
     @Published var user: User
     
     init() {
-        self.user = User (name: "Max", hcp: 30, email:"max.eidet@gmail.com", image: "seagull")
+        self.user = User (name: "Max", hcp: 16, email:"max.eidet@gmail.com", image: "profile")
     }
 }

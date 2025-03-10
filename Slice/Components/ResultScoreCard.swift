@@ -1,79 +1,153 @@
-//
-//  ResultScoreCard.swift
-//  Slice
-//
-//  Created by Max Eidet on 2024-12-09.
-//
+// ResultScoreCard.swift
+// Slice
+// Created by Max Eidet on 2024-12-09.
 
 import SwiftUI
 
 struct ResultScoreCard: View {
-    let scores: [Int:String]
+    let scores: [Int: String]
+    let parValues = [4, 5, 3, 4, 4, 3, 5, 4, 4, 4, 3, 5, 4, 4, 3, 4, 5, 4] // Realistic 18-hole par
     
     var body: some View {
-        VStack {
-            //Hole
-            HStack {
-                Text("Hole")
-                    .frame(width: 50)
-                ForEach(scores.sorted(by: { $0.key < $1.key }).prefix(9), id: \.key) { key, value in
-                    Text("\(key)") // Example par; customize per hole if needed
-                        .frame(width: 20)
-                        .foregroundStyle(.secondary)
+        VStack(spacing: 0) {
+            // Grid Container
+            VStack(spacing: 0) {
+                // Front 9
+                VStack(spacing: 0) {
+                    holeRow(holes: 1...9)
+                    parRow(holes: 0..<9)
+                    scoreRow(holes: 1...9)
                 }
-                Text("Out")
-                    .frame(width:30, height: 20)
                 
-            }
-           
-            // Par
-            HStack {
-                Text("Par")
-                    .frame(width: 50)
-                ForEach(1...9, id: \.self) { _ in
-                    Text("4")
-                        .frame(width: 20)
-                        .foregroundStyle(.secondary)
+                // Back 9
+                VStack(spacing: 0) {
+                    holeRow(holes: 10...18)
+                    parRow(holes: 9..<18)
+                    scoreRow(holes: 10...18)
                 }
-                Text("36")
-                    .frame(width:30, height: 20)
             }
             
-            // Score
-            HStack {
-                Text("Score")
-                    .frame(width: 50)
-                ForEach(Array(scores.sorted(by: { $0.key < $1.key }).prefix(9)), id: \.key) { hole, score in
-                    Text("\(score)")
-                        .frame(width: 20)
-                        .foregroundStyle(.secondary)
-                }
-                
-                Text("54")
-                    .frame(width:30, height: 20)
-            }
-            .frame(height: 30)
+            // Totals
+            totalsRow
+                .padding(.bottom, 8)
         }
+        .background(Color(.systemBackground))
+        .clipShape(RoundedRectangle(cornerRadius: 12))
+        .overlay(
+            RoundedRectangle(cornerRadius: 12)
+                .stroke(Color(.systemGray4), lineWidth: 0)
+        )
+        .shadow(color: Color.black.opacity(0.2), radius: 3, x: 0, y: 1)
         .padding()
-        .frame(width: 370)
-        .background(Color.white)
-        .cornerRadius(10)
-        .shadow(color: Color.black.opacity(0.5), radius: 4, x: 0, y: 2)
-       
-           
+    }
+    
+    private func holeRow(holes: ClosedRange<Int>) -> some View {
+        HStack(spacing: 0) {
+            if holes.lowerBound == 1 {
+                Text("Hole")
+                    .frame(width: 50, alignment: .leading)
+                    .foregroundStyle(.white)
+            } else if holes.lowerBound == 10 { // When starting Hole 10
+                Text("Hole")
+                    .frame(width: 50, alignment: .leading)
+                    .foregroundStyle(.white)
+            } else {
+                Spacer()
+                    .frame(width: 50)
+            }
+            
+            ForEach(holes, id: \.self) { hole in
+                Text("\(hole)")
+                    .frame(width: 32, height: 24)
+                    .foregroundStyle(.white)
+            }
+            
+            Spacer() // Ensures the background fills the full width
+        }
+        .padding(.horizontal)
+        .frame(maxWidth: .infinity) // Forces full width
+        .background(Color.greenApp) // Makes sure background fills entire row
+        .font(.subheadline)
+    }
+    
+    private func parRow(holes: Range<Int>) -> some View {
+        HStack(spacing: 0) {
+            if holes.lowerBound == 0 {
+                Text("Par")
+                    .frame(width: 50, alignment: .leading)
+                    .foregroundStyle(.secondary)
+            } else if holes.lowerBound == 9 { // When starting Hole 10
+                Text("Par")
+                    .frame(width: 50, alignment: .leading)
+                    .foregroundStyle(.secondary)
+            } else {
+                Spacer()
+                    .frame(width: 50)
+            }
+            
+            ForEach(holes, id: \.self) { index in
+                Text("\(parValues[index])")
+                    .frame(width: 32, height: 24)
+                    .foregroundStyle(.secondary)
+            }
+            Spacer()
+        }
+        .padding(.horizontal)
+        .frame(maxWidth: .infinity)
+        .font(.subheadline)
+    }
+    
+    private func scoreRow(holes: ClosedRange<Int>) -> some View {
+        HStack(spacing: 0) {
+            if holes.lowerBound == 1 {
+                Text("Score")
+                    .frame(width: 50, alignment: .leading)
+                    .foregroundStyle(.secondary)
+            } else if holes.lowerBound == 10 {
+                Text("Score")
+                    .frame(width: 50, alignment: .leading)
+                    .foregroundStyle(.secondary)
+            }
+            else {
+                Spacer()
+                    .frame(width: 50)
+            }
+            ForEach(holes, id: \.self) { hole in
+                let score = scores[hole] ?? "0"
+                Text(score)
+                    .frame(width: 32, height: 24)
+                    .foregroundStyle(score != "0" ? .secondary : .secondary)
+                    .background(score != "0" ? Color(.white) : Color.clear)
+            }
+            Spacer()
+            
+        }
+        .padding(.horizontal)
+        .frame(maxWidth: .infinity)
+        .font(.subheadline)
+    }
+    
+    private var totalsRow: some View {
+        HStack(spacing: 0) {
+            Spacer()
+            HStack {
+                Text("Total: \(scores.values.compactMap { Int($0) }.reduce(0, +))")
+                    .fontWeight(.semibold)
+                VStack {
+                    Text("Front 9: \(scores.filter { $0.key <= 9 }.values.compactMap { Int($0) }.reduce(0, +))")
+                    Text("Back 9: \(scores.filter { $0.key > 9 }.values.compactMap { Int($0) }.reduce(0, +))")
+                }
+            }
+            .font(.subheadline)
+            .foregroundStyle(.primary)
+            .padding(.horizontal)
+        }
     }
 }
 
 #Preview {
     ResultScoreCard(scores: [
-        1: "4",
-        2: "5",
-        3: "3",
-        4: "4",
-        5: "3",
-        6: "4",
-        7: "3",
-        8: "5",
-        9: "4"
+        1: "4", 2: "6", 3: "3", 4: "5", 5: "4", 6: "3", 7: "6", 8: "4", 9: "5",
+        10: "4", 11: "3", 12: "6", 13: "5", 14: "4", 15: "3", 16: "4", 17: "6", 18: "5"
     ])
 }

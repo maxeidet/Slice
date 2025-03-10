@@ -18,38 +18,91 @@ struct HomeScreen: View {
     var body: some View {
         NavigationStack {
             
-            VStack {
-                Text("Welcome")
-                    .font(.title)
-                    .fontWeight(.semibold)
-                    .foregroundStyle(.white)
-                HStack(alignment:.top) {
-                    VStack(alignment: .leading) {
-                        Text(user.name)
+            VStack(alignment: .leading, spacing: 8) {
+                // TOP HStack
+                HStack {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Welcome")
+                            .font(.largeTitle)
                             .fontWeight(.semibold)
-                            .font(.title2)
-                            .foregroundStyle(.white)
-                        Text("HCP: \(user.hcp)")
-                            .foregroundStyle(.white)
-                            .font(.subheadline)
-                        Text("Rounds played: 40")
-                            .foregroundStyle(.white)
-                            .font(.subheadline)
+                            .foregroundColor(.black)
+
+                        Text(user.name)
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .foregroundColor(.greenApp)
                     }
+                    
                     Spacer()
                     
-                    Text("Edit profile")
-                        .foregroundStyle(Color(.white))
-                        .font(.subheadline)
+                    VStack (spacing: 8){
+                        Image("\(user.image)")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 60)
+                            .clipShape(Circle())
+                        NavigationLink(destination: ProfileView()) {
+                            Text("Edit profile")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                    }
+                    
                 }
-                .padding(.horizontal,20)
+                
+                // Secound HStack
+                HStack(spacing: 15) {
+                    VStack {
+                        Text("HCP")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                        Text("\(user.hcp)")
+                            .font(.title2)
+                            .fontWeight(.semibold)
+                    }
+                    
+                    Divider()
+                        .frame(height: 30)
+                    
+                    VStack {
+                        Text("AVG")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                        Text("\(Int(averageScore))")
+                            .font(.title2)
+                            .fontWeight(.semibold)
+                    }
+                    
+                    Divider()
+                        .frame(height: 30)
+                    VStack {
+                        Text("Best")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                        Text("71")
+                            .font(.title2)
+                            .fontWeight(.semibold)
+                    }
+                    Divider()
+                        .frame(height: 30)
+                    VStack {
+                        Text("Rounds")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                        Text("40")
+                            .font(.title2)
+                            .fontWeight(.semibold)
+                    }
+                   
+                    Spacer()
+                    
+                    
+                    // Come up with something the view here
+                }
+                //.padding(.top, 4)
             }
-            .frame(width: 420, height: 150)
-            .background(
-                Image("homeImage")
-                    .resizable()
-                    .edgesIgnoringSafeArea(.all)
-            )
+            .frame(width: 370, height: 150)
+            .padding(.horizontal)
             
             VStack(alignment: .leading) {
                 HStack {
@@ -202,6 +255,7 @@ struct HomeScreen: View {
             Spacer()
 
         }
+        .navigationBarBackButtonHidden(true)
     }
     
     private func formattedDate(_ date: Date) -> String {

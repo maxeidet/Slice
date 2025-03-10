@@ -26,9 +26,43 @@
 		4D5231B22CF798A100505551 /* HoleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5231B12CF798A100505551 /* HoleCard.swift */; };
 		4D5231B62CF8F1BE00505551 /* HcpCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5231B52CF8F1BE00505551 /* HcpCalculator.swift */; };
 		4D5231B82CF9F6D200505551 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5231B72CF9F6D200505551 /* EditProfileView.swift */; };
+		4D8F08822D73345E005E42A5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8F08812D73345E005E42A5 /* ProfileView.swift */; };
 		4DBF0CE52D484EDB005EFB7F /* GolfMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBF0CE42D484EDB005EFB7F /* GolfMapView.swift */; };
+		4DBF0CE72D4B9F99005EFB7F /* DistanceActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBF0CE62D4B9F99005EFB7F /* DistanceActivityAttributes.swift */; };
+		4DBF0CEF2D4B9FE4005EFB7F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DBF0CEE2D4B9FE4005EFB7F /* WidgetKit.framework */; };
+		4DBF0CF12D4B9FE4005EFB7F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DBF0CF02D4B9FE4005EFB7F /* SwiftUI.framework */; };
+		4DBF0CF42D4B9FE4005EFB7F /* DistanceActivityBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBF0CF32D4B9FE4005EFB7F /* DistanceActivityBundle.swift */; };
+		4DBF0CF62D4B9FE4005EFB7F /* DistanceActivityLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBF0CF52D4B9FE4005EFB7F /* DistanceActivityLiveActivity.swift */; };
+		4DBF0CF82D4B9FE4005EFB7F /* DistanceActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBF0CF72D4B9FE4005EFB7F /* DistanceActivity.swift */; };
+		4DBF0CFA2D4B9FE7005EFB7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DBF0CF92D4B9FE7005EFB7F /* Assets.xcassets */; };
+		4DBF0CFE2D4B9FE7005EFB7F /* DistanceActivityExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4DBF0CEC2D4B9FE3005EFB7F /* DistanceActivityExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4DBF0D032D4BA71D005EFB7F /* DistanceActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBF0CE62D4B9F99005EFB7F /* DistanceActivityAttributes.swift */; };
 		4DFDE2B62D076A4F0019EF37 /* ResultScoreCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFDE2B52D076A4F0019EF37 /* ResultScoreCard.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4DBF0CFC2D4B9FE7005EFB7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4D52316F2CF6582400505551 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4DBF0CEB2D4B9FE3005EFB7F;
+			remoteInfo = DistanceActivityExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4DBF0D022D4B9FE7005EFB7F /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				4DBF0CFE2D4B9FE7005EFB7F /* DistanceActivityExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4D4CC6042D185F5500F9249A /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
@@ -51,7 +85,17 @@
 		4D5231B12CF798A100505551 /* HoleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoleCard.swift; sourceTree = "<group>"; };
 		4D5231B52CF8F1BE00505551 /* HcpCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HcpCalculator.swift; sourceTree = "<group>"; };
 		4D5231B72CF9F6D200505551 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		4D8F08812D73345E005E42A5 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		4DBF0CE42D484EDB005EFB7F /* GolfMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GolfMapView.swift; sourceTree = "<group>"; };
+		4DBF0CE62D4B9F99005EFB7F /* DistanceActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceActivityAttributes.swift; sourceTree = "<group>"; };
+		4DBF0CEC2D4B9FE3005EFB7F /* DistanceActivityExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DistanceActivityExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DBF0CEE2D4B9FE4005EFB7F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		4DBF0CF02D4B9FE4005EFB7F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		4DBF0CF32D4B9FE4005EFB7F /* DistanceActivityBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceActivityBundle.swift; sourceTree = "<group>"; };
+		4DBF0CF52D4B9FE4005EFB7F /* DistanceActivityLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceActivityLiveActivity.swift; sourceTree = "<group>"; };
+		4DBF0CF72D4B9FE4005EFB7F /* DistanceActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceActivity.swift; sourceTree = "<group>"; };
+		4DBF0CF92D4B9FE7005EFB7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4DBF0CFB2D4B9FE7005EFB7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DFDE2B52D076A4F0019EF37 /* ResultScoreCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultScoreCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +107,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4DBF0CE92D4B9FE3005EFB7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DBF0CF12D4B9FE4005EFB7F /* SwiftUI.framework in Frameworks */,
+				4DBF0CEF2D4B9FE4005EFB7F /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -70,6 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				4D5231792CF6582400505551 /* Slice */,
+				4DBF0CF22D4B9FE4005EFB7F /* DistanceActivity */,
+				4DBF0CED2D4B9FE4005EFB7F /* Frameworks */,
 				4D5231782CF6582400505551 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				4D5231772CF6582400505551 /* Slice.app */,
+				4DBF0CEC2D4B9FE3005EFB7F /* DistanceActivityExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,12 +146,14 @@
 				4D5231A72CF76C7800505551 /* PickCourse.swift */,
 				4D5231A22CF741FE00505551 /* Components */,
 				4D52318A2CF6587100505551 /* HomeScreen.swift */,
+				4D8F08812D73345E005E42A5 /* ProfileView.swift */,
 				4D4CC6042D185F5500F9249A /* Test.swift */,
 				4D5231AD2CF780C700505551 /* GolfingScreen.swift */,
 				4D5231B72CF9F6D200505551 /* EditProfileView.swift */,
 				4D5231A92CF7701100505551 /* CourseDataModel.swift */,
 				4D5231AB2CF7758E00505551 /* LocationManager.swift */,
 				4DBF0CE42D484EDB005EFB7F /* GolfMapView.swift */,
+				4DBF0CE62D4B9F99005EFB7F /* DistanceActivityAttributes.swift */,
 				4D5231A02CF741F500505551 /* RecentCard.swift */,
 				4D5231A32CF7545100505551 /* AllRounds.swift */,
 				4D5231A52CF76AC400505551 /* GameDetailView.swift */,
@@ -126,6 +184,27 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		4DBF0CED2D4B9FE4005EFB7F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4DBF0CEE2D4B9FE4005EFB7F /* WidgetKit.framework */,
+				4DBF0CF02D4B9FE4005EFB7F /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4DBF0CF22D4B9FE4005EFB7F /* DistanceActivity */ = {
+			isa = PBXGroup;
+			children = (
+				4DBF0CF32D4B9FE4005EFB7F /* DistanceActivityBundle.swift */,
+				4DBF0CF52D4B9FE4005EFB7F /* DistanceActivityLiveActivity.swift */,
+				4DBF0CF72D4B9FE4005EFB7F /* DistanceActivity.swift */,
+				4DBF0CF92D4B9FE7005EFB7F /* Assets.xcassets */,
+				4DBF0CFB2D4B9FE7005EFB7F /* Info.plist */,
+			);
+			path = DistanceActivity;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -136,15 +215,34 @@
 				4D5231732CF6582400505551 /* Sources */,
 				4D5231742CF6582400505551 /* Frameworks */,
 				4D5231752CF6582400505551 /* Resources */,
+				4DBF0D022D4B9FE7005EFB7F /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4DBF0CFD2D4B9FE7005EFB7F /* PBXTargetDependency */,
 			);
 			name = Slice;
 			productName = Slice;
 			productReference = 4D5231772CF6582400505551 /* Slice.app */;
 			productType = "com.apple.product-type.application";
+		};
+		4DBF0CEB2D4B9FE3005EFB7F /* DistanceActivityExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4DBF0CFF2D4B9FE7005EFB7F /* Build configuration list for PBXNativeTarget "DistanceActivityExtension" */;
+			buildPhases = (
+				4DBF0CE82D4B9FE3005EFB7F /* Sources */,
+				4DBF0CE92D4B9FE3005EFB7F /* Frameworks */,
+				4DBF0CEA2D4B9FE3005EFB7F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DistanceActivityExtension;
+			productName = DistanceActivityExtension;
+			productReference = 4DBF0CEC2D4B9FE3005EFB7F /* DistanceActivityExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -157,6 +255,9 @@
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					4D5231762CF6582400505551 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					4DBF0CEB2D4B9FE3005EFB7F = {
 						CreatedOnToolsVersion = 15.4;
 					};
 				};
@@ -175,6 +276,7 @@
 			projectRoot = "";
 			targets = (
 				4D5231762CF6582400505551 /* Slice */,
+				4DBF0CEB2D4B9FE3005EFB7F /* DistanceActivityExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -186,6 +288,14 @@
 			files = (
 				4D5231822CF6582700505551 /* Preview Assets.xcassets in Resources */,
 				4D52317F2CF6582700505551 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DBF0CEA2D4B9FE3005EFB7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DBF0CFA2D4B9FE7005EFB7F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,13 +322,34 @@
 				4D52317B2CF6582400505551 /* SliceApp.swift in Sources */,
 				4D52319F2CF66EB200505551 /* UserData.swift in Sources */,
 				4D5231B02CF7855000505551 /* ScorecardModal.swift in Sources */,
+				4DBF0CE72D4B9F99005EFB7F /* DistanceActivityAttributes.swift in Sources */,
 				4D52318B2CF6587100505551 /* HomeScreen.swift in Sources */,
 				4D5231A82CF76C7800505551 /* PickCourse.swift in Sources */,
+				4D8F08822D73345E005E42A5 /* ProfileView.swift in Sources */,
 				4D5231A62CF76AC400505551 /* GameDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4DBF0CE82D4B9FE3005EFB7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DBF0D032D4BA71D005EFB7F /* DistanceActivityAttributes.swift in Sources */,
+				4DBF0CF82D4B9FE4005EFB7F /* DistanceActivity.swift in Sources */,
+				4DBF0CF62D4B9FE4005EFB7F /* DistanceActivityLiveActivity.swift in Sources */,
+				4DBF0CF42D4B9FE4005EFB7F /* DistanceActivityBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4DBF0CFD2D4B9FE7005EFB7F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4DBF0CEB2D4B9FE3005EFB7F /* DistanceActivityExtension */;
+			targetProxy = 4DBF0CFC2D4B9FE7005EFB7F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		4D5231832CF6582700505551 /* Debug */ = {
@@ -343,6 +474,7 @@
 		4D5231862CF6582700505551 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -353,6 +485,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Need Location";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Need location";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -374,6 +507,7 @@
 		4D5231872CF6582700505551 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -384,6 +518,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Need Location";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Need location";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -396,6 +531,60 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ok.Slice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4DBF0D002D4B9FE7005EFB7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RV5PUD6KKM;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DistanceActivity/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DistanceActivity;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ok.Slice.DistanceActivity;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4DBF0D012D4B9FE7005EFB7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RV5PUD6KKM;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DistanceActivity/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DistanceActivity;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ok.Slice.DistanceActivity;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -419,6 +608,15 @@
 			buildConfigurations = (
 				4D5231862CF6582700505551 /* Debug */,
 				4D5231872CF6582700505551 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4DBF0CFF2D4B9FE7005EFB7F /* Build configuration list for PBXNativeTarget "DistanceActivityExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4DBF0D002D4B9FE7005EFB7F /* Debug */,
+				4DBF0D012D4B9FE7005EFB7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

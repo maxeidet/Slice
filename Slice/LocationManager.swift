@@ -52,7 +52,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         
         let greenCLLocation = CLLocation(latitude: greenLocation.latitude, longitude: greenLocation.longitude)
         let distance = currentLocation.distance(from: greenCLLocation)
-        
+        print("Distance to green: \(distance) m")
         DispatchQueue.main.async {
             self.distance = distance
         }

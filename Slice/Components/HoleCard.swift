@@ -14,7 +14,7 @@ struct HoleCard: View {
     let index: Int
     let imageName: String
     let greenLocation: CLLocationCoordinate2D
-    @StateObject private var locationManager = LocationManager()
+    @ObservedObject var locationManager = LocationManager ()
     
     var body: some View {
         VStack {
@@ -68,14 +68,13 @@ struct HoleCard: View {
                 .frame(height: 400)
         }
         .onAppear {
-            // Start updating the location when the view appears
-            locationManager.startUpdatingLocation(to: greenLocation)
-        }
+                    locationManager.startUpdatingLocation(to: greenLocation)
+                }
         .onDisappear {
-            // Stop updating the location when the view disappears
-            locationManager.stopUpdatingLocation()
-        }
+                    locationManager.stopUpdatingLocation()
+                }
     }
+    
     
 }
 

@@ -27,6 +27,8 @@ struct GameDetailView: View {
                             .foregroundStyle(.black)
                     }
                     Spacer()
+                    
+                    Text("Share")
                 }
                 
                 // Round Details
@@ -77,11 +79,12 @@ struct GameDetailView: View {
                         }) {
                             HStack {
                                 Text("Map Overview")
+                                    .foregroundStyle(.white)
                                 Image(systemName: "mappin.and.ellipse")
-                                    .foregroundStyle(.greenApp)
+                                    .foregroundStyle(.white)
                             }
                             .padding()
-                            .background(Color.white)
+                            .background(Color.greenApp)
                             .cornerRadius(10)
                             .shadow(radius: 3)
                         }
@@ -91,10 +94,6 @@ struct GameDetailView: View {
                 .padding(.top)
                 
                 VStack {
-                    HStack {
-                        Text("Scorecard")
-                        Spacer()
-                    }
                     ResultScoreCard(scores: round.scores)
                 }
                 .padding()
