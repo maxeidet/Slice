@@ -29,6 +29,7 @@ struct GameDetailView: View {
                     Spacer()
                     
                     Text("Share")
+                        .font(.caption)
                 }
                 
                 // Round Details
